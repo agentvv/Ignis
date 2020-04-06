@@ -1,8 +1,56 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Hello</title>
+	<head>
+		<title>Ignis</title>
+    	<link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
     </head>
-    <body>
-        <p>This is a test.</p>
+
+	<body>
+        <div id="mainMenu">
+            This is the main menu
+            <br/>
+            <button class="newGame">New Game</button>
+            <br/>
+            <button class="loadGame">Load Game</button>
+            <br/>
+            <button class="exit">Close App</button>
+        </div>
+        
+        <div id="gameCreater" style="display:none">
+            <button class="goToMain">Main Menu</button>
+            <p>You're creating a new game</p>
+            <p>Enter stats here:</p>
+            <p>Bla</p>
+            <button class="goToGame">Start the game!</button>
+        </div>
+        
+        <div id="gameLoader" style="display:none">
+            <button class="goToMain">Main Menu</button>
+            <p>You're loading a game</p>
+            <p>Select game here:</p>
+            <p>Bla</p>
+            <button class="goToGame">Load my game!</button>
+        </div>
+        
+        <div id="mainGame" style="display:none">
+            <button class="goToMain">Main Menu</button>
+            <p>This is the game</p>
+            <p>This is a fire (use your imagination)</p>
+            <p>This is your inventory (use your imagination)</p>
+            <button class="goToShop">Shop</button>
+        </div>
+        
+        <div id="shop" style="display:none">
+            <button class="goToGame">Back to fire</button>
+            <p>This is the shop</p>
+            <H1>Buy things:</H1>
+            <ul id="shopItems">
+                <li><button>Thing 1</button></li>
+                <li><button>Thing 2</button></li>
+            </ul>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="../static/main.js"></script>
     </body>
 </html>
