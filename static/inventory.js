@@ -20,7 +20,7 @@ class Item {
         if (this.num > 1) this.num--;
         else {
             for (var i = 0; i < inventory.items.length; i++) {
-                if (inventory.items[i] == this) {
+                if (inventory.items[i] === this) {
                     inventory.items.splice(i,1);
                 }
             }
@@ -108,7 +108,7 @@ function updateInventory() {
 function itemUse(event) {
     var item = event.target.id.slice(3, event.target.id.length);
     for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == item) {
+        if (inventory.items[i].name === item) {
             inventory.items[i].use();
         }
     }
