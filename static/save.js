@@ -1,3 +1,4 @@
+var name = "";
 $('#createGame').click(function () {
     console.log('Button clicked');
     name = document.getElementById('fireName').value;
@@ -21,7 +22,9 @@ function createGame(game) {
         data: JSON.stringify(game),
         contentType: 'application/json',
         success: function (data) {
-            console.log(data);
+            data = JSON.parse(data);
+            gameID = data;
+            document.getElementById('fireName').value = "";
         },
         error: function (error) {
             console.error(error);
@@ -29,11 +32,9 @@ function createGame(game) {
     });
 }
 
-
 $('#loadGameButton').click(loadGames);
     
 function loadGames() {
-    console.log('Load game');
     $.ajax({
         type: 'GET', 
         url: '/api/all',
@@ -51,3 +52,67 @@ function loadGames() {
         }
     });
 };
+
+$('#saveExit').click(function() {
+    saveGame();
+});
+
+function saveGame() {
+    var game = {
+        name: name,
+        fire: fire, 
+        inventory: inventory
+    }
+    var data = {
+        id: gameID,
+        game: game
+    };
+    $.ajax({
+        type: 'POST',
+        url: '/api/save',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function(data) {
+            console.log(data);
+            fire = {
+                size: 1000,
+                heat: 1000,
+                brightness: 1000,
+                smokiness: 1000,
+                protection: 1000,
+                colour: "Default",
+            };
+            inventory = {};
+            name = "";
+        }, 
+        error: function(error) {
+            console.error(error);
+        }
+    });
+}
+
+$('#loadGame').click(function () {
+    options = document.getElementById('loadGameSelect');
+    selectedOption = options[options.selectedIndex].value;
+    loadSelectedGame(selectedOption);
+});
+
+function loadSelectedGame(option) {
+    $.ajax({
+        type: 'POST', 
+        url: '/api/load', 
+        contentType: 'application/json', 
+        data: JSON.stringify(option), 
+        success: function (data) {
+            console.log(data);
+            //data = JSON.parse(data);
+            gameID = parseInt(option);
+            fire = data['fire'];
+            name = data['name'];
+            inventory = data['inventory'];
+        }, 
+        error: function (error) {
+            console.error(error);
+        }
+    })
+}

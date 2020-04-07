@@ -22,14 +22,17 @@ def new():
     db.session.add(game)
     db.session.commit()
 
-    return "Game created."
+    return json.dumps(game.id)
 
-
-#@game.route('/api/save')
-#def save():
-#    game = request.json
-    
-
+@game.route('/api/save', methods=['POST'])
+def save():
+    data = request.json
+    gameID = data['id']
+    gameState = data['game']
+    gameToChange = SavedGame.query.filter_by(id=gameID).first()
+    gameToChange.gameState = json.dumps(gameState)
+    db.session.commit()
+    return 'Game saved.'
 
 @game.route('/api/load', methods=['POST'])
 def load():

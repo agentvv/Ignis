@@ -1,3 +1,5 @@
+var gameID = 1
+
 var fire = {
     size: 1000,
     heat: 1000,
@@ -8,7 +10,7 @@ var fire = {
 };
 
 function tick() {
-    if (document.getElementById("mainGame").style.display == "none")
+    if (document.getElementById("mainScreenWrapper").style.display == "none")
         return;
     
     weatherEffects = getWeatherEffects();
@@ -57,6 +59,9 @@ function toggleBackground(){
         $(".goToMain").click(function() {
             loadPage(0);
         });
+        $('#saveExit').click(function() {
+            saveGame();
+        });
     } else {
         var backgroundnum = document.getElementById('mainScreenWrapper').innerHTML;
         var newHTML = backgroundnum.slice(0, 61+25) + '1' + backgroundnum.slice(61+26, backgroundnum.length);
@@ -73,6 +78,9 @@ function toggleBackground(){
         });
         $(".goToMain").click(function() {
             loadPage(0);
+        });
+        $('#saveExit').click(function() {
+            saveGame();
         });
     }
 }
