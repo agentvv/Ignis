@@ -42,6 +42,8 @@ function tick() {
         }
     }
 
+    neanderthal();
+
     updateDisplay();
     return;
 }

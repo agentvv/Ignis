@@ -16,7 +16,6 @@ $(".goToGame").click(function() {
 
 $(".goToShop").click(function() {
     loadPage(4);
-    updateShop();
 });
 
 $(".goToInventory").click(function() {
@@ -31,6 +30,7 @@ function loadPage(page) {
     }
     if (page == 1) {
         document.getElementById("mainScreenWrapper").style.display = "block";
+        updateDisplay();
     } else {
         document.getElementById("mainScreenWrapper").style.display = "none";
     }
@@ -47,11 +47,13 @@ function loadPage(page) {
     }
     if (page == 4) {
         document.getElementById("shopScreen").style.display = "block";
+        updateShop();
     } else {
         document.getElementById("shopScreen").style.display = "none";
     }
     if (page == 5) {
         document.getElementById("inventoryScreen").style.display = "block";
+        updateInventory();
     } else {
         document.getElementById("inventoryScreen").style.display = "none";
     }
