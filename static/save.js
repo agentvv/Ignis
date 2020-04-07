@@ -96,8 +96,11 @@ function saveGame() {
 
 $('#loadGame').click(function () {
     options = document.getElementById('loadGameSelect');
-    selectedOption = options[options.selectedIndex].value;
-    loadSelectedGame(selectedOption);
+    if (options[options.selectedIndex] != undefined) {
+        selectedOption = options[options.selectedIndex].value;
+        loadSelectedGame(selectedOption);
+        loadPage(1);
+    }
 });
 
 function loadSelectedGame(option) {
@@ -108,7 +111,6 @@ function loadSelectedGame(option) {
         data: JSON.stringify(option), 
         success: function (data) {
             console.log(data);
-            //data = JSON.parse(data);
             gameID = parseInt(option);
             fire = data['fire'];
             name = data['name'];
