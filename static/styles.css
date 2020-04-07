@@ -64,8 +64,11 @@ html, body {
 .statsDisplay {
     background-color: #353535;
     opacity: 0.8;
-    /*width: fit-content;*/
     width: max-content;
     padding: 5px;
     margin: 5px;
+}
+
+.mainMenuButton {
+    margin: 10px;
 }
