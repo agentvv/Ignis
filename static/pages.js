@@ -24,32 +24,32 @@ $(".goToInventory").click(function() {
 
 function loadPage(page) {
     if (page == 0) {
-        document.getElementById("mainMenu").style.display = "block";
+        document.getElementById("mainMenu").style.display = "flex";
     } else {
         document.getElementById("mainMenu").style.display = "none";
     }
     if (page == 1) {
-        document.getElementById("mainGame").style.display = "block";
+        document.getElementById("mainGame").style.display = "flex";
     } else {
         document.getElementById("mainGame").style.display = "none";
     }
     if (page == 2) {
-        document.getElementById("gameCreater").style.display = "block";
+        document.getElementById("gameCreater").style.display = "flex";
     } else {
         document.getElementById("gameCreater").style.display = "none";
     }
     if (page == 3) {
-        document.getElementById("gameLoader").style.display = "block";
+        document.getElementById("gameLoader").style.display = "flex";
     } else {
         document.getElementById("gameLoader").style.display = "none";
     }
     if (page == 4) {
-        document.getElementById("shopScreen").style.display = "block";
+        document.getElementById("shopScreen").style.display = "flex";
     } else {
         document.getElementById("shopScreen").style.display = "none";
     }
     if (page == 5) {
-        document.getElementById("inventoryScreen").style.display = "block";
+        document.getElementById("inventoryScreen").style.display = "flex";
     } else {
         document.getElementById("inventoryScreen").style.display = "none";
     }
