@@ -46,7 +46,7 @@ function loadPage(page) {
         document.getElementById("gameLoader").style.display = "none";
     }
     if (page == 4) {
-        document.getElementById("shopScreen").style.display = "block";
+        document.getElementById("shopScreen").style.display = "flex";
         updateShop();
     } else {
         document.getElementById("shopScreen").style.display = "none";
