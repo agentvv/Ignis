@@ -81,3 +81,8 @@ html, body {
     padding-left: 30px;
     padding-right: 30px;
 }
+#fire {
+    width: 70px;
+    margin-top: -20px;
+    margin-left: 390px;
+}
