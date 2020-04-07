@@ -1,12 +1,13 @@
 html, body {
     background-color: #bfbfbf;
-
+    color: white;
 }
 
 #wrapper {
+    color: white;
     height: 400px;
     width: 600px;
-    background-color: #ed8a34;
+    background-color: #353535;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -21,5 +22,23 @@ html, body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 40%;
+    width: 80%;
+}
+
+.menu input[type="button"] {
+    width: 50%;
+}
+
+.backToMenu {
+    width: 100px;
+    height: 10px;
+}
+
+.statsTable {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rowButton{
+    margin: 5px 0 5px 0;
 }

@@ -35,6 +35,7 @@ function loadPage(page) {
     }
     if (page == 2) {
         document.getElementById("gameCreater").style.display = "flex";
+        newGame();
     } else {
         document.getElementById("gameCreater").style.display = "none";
     }
@@ -58,3 +59,91 @@ function loadPage(page) {
 $(".exit").click(function() {
     window.location.href = "http://www.google.com";
 });
+
+
+var remainingStats = 15;
+
+function newGame() {
+    var remainingStatsDisplay = document.getElementById('statsRemaining');
+    var heatDisplay = document.getElementById('startHeat');
+    var brightDisplay = document.getElementById('startBright');
+    var smokeDisplay = document.getElementById('startSmoke');
+    var protectDisplay = document.getElementById('startProtect');
+    const minHeat = fire.heat;
+    const minBright = fire.brightness;
+    const minProtect = fire.protection;
+    const minSmoke = fire.smokiness;
+
+    updateRemainingDisplay();
+
+    $('#heatInc').click(function() {
+        if (remainingStats > 0) {
+            remainingStats--;
+            fire.heat++;
+            updateRemainingDisplay()
+        }
+    });
+    $('#heatDec').click(function() {
+        if (fire.heat > minHeat) {
+            remainingStats++;  
+            fire.heat--;
+            updateRemainingDisplay()
+        }
+    });
+
+    $('#brightInc').click(function() {
+        if (remainingStats > 0) {
+            remainingStats--;
+            fire.brightness++;
+            updateRemainingDisplay()
+        }
+    });
+    $('#brightDec').click(function() {
+        if (fire.brightness > minBright) {
+            remainingStats++;
+            fire.brightness--;
+            updateRemainingDisplay()
+        }
+    });
+
+    $('#smokeInc').click(function() {
+        if (remainingStats > 0) {
+            remainingStats--;
+            fire.smokiness++;
+            updateRemainingDisplay()
+        }
+    });
+    $('#smokeDec').click(function() {
+        if (fire.smokiness > minHeat) {
+            remainingStats++;
+            fire.smokiness--;
+            updateRemainingDisplay()    
+        }
+        
+    });
+
+    $('#protectInc').click(function() {
+        if (remainingStats > 0) {
+            remainingStats--;
+            fire.protection++;
+            updateRemainingDisplay()
+        }
+    });
+    $('#protectDec').click(function() {
+        if (fire.protection > minProtect) {
+            remainingStats++;
+            fire.protection--;
+            updateRemainingDisplay()
+        }
+    });
+
+
+    function updateRemainingDisplay() {
+        remainingStatsDisplay.innerHTML = "Stats Remaining: " + remainingStats.toString();
+        heatDisplay.innerHTML = fire.heat.toString();
+        brightDisplay.innerHTML = fire.brightness.toString();
+        smokeDisplay.innerHTML = fire.smokiness.toString();
+        protectDisplay.innerHTML = fire.protection.toString();
+    }
+    
+}

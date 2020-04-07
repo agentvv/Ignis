@@ -1,10 +1,10 @@
 var fire = {
     size: 1000,
     heat: 1000,
-    brightness,
-    smokiness,
-    colour,
-    protection
+    brightness: 0,
+    smokiness: 0,
+    colour: 0,
+    protection: 0
 }
 
 function tick() {

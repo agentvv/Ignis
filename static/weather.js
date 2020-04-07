@@ -1,5 +1,5 @@
-var currentWeather{
-    currentTemp,
+var currentWeather = {
+    currentTemp: 0
     //Need more, depends on what we get from API
 }
 

@@ -3,50 +3,78 @@
 	<head>
 		<title>Ignis</title>
         <link rel="stylesheet" href="../static/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/x.y.z/css/bulma.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
 	<body>
         <div id="wrapper">
             <div id="mainMenu" class="menu">
-                This is the main menu
+                <h1 style="text-align: center;">IGNIS</h1>
                 <br/>
-                <button class="newGame">New Game</button>
+                <button class="newGame button">New Game</button>
                 <br/>
-                <button class="loadGame">Load Game</button>
+                <button class="loadGame button">Load Game</button>
                 <br/>
-                <button class="exit">Close App</button>
+                <button class="exit button">Close App</button>
             </div>
             
             <div id="gameCreater" style="display:none" class="menu">
-                <button class="goToMain">Main Menu</button>
+                <button class="goToMain button backToMenu">Main Menu</button>
                 <p>Give your fire a name:</p>
-                <input id="fireName" type="text">
-                <p>Enter stats here:</p>
-                <p>Size, heat, brightness, smokiness, color, protection</p>
-                <button id="createGame" class="goToGame">Start the game!</button>
+                <input id="fireName" type="text" class="input is-danger">
+                <div><strong style="color: white;">Enter stats here</strong></div>
+                <div id="statsRemaining">Stats Remaining: 10</div>
+
+
+                <table class="statsTable" style="width:100%">
+                        <td>Heat</td>
+                        <td><button id="heatInc" class="button is-small rowButton">Inc</button></td>
+                        <td><button id="heatDec" class="button is-small rowButton">Dec</button></td>
+                        <td id="startHeat"></td>
+                    </tr>
+                    <tr>
+                        <td>Brightness</td>
+                        <td><button id="brightInc" class="button is-small rowButton">Inc</button></td>
+                        <td><button id="brightDec" class="button is-small rowButton">Dec</button></td>
+                        <td id="startBright"></td>
+                    </tr>
+                    <tr>
+                        <td>Smokiness</td>
+                        <td><button id="smokeInc" class="button is-small rowButton">Inc</button></td>
+                        <td><button id="smokeDec" class="button is-small rowButton">Dec</button></td>
+                        <td id="startSmoke"></td>
+                    </tr>
+                    <tr>
+                        <td>Protection</td>
+                        <td><button id="protectInc" class="button is-small rowButton">Inc</button></td>
+                        <td><button id="protectDec" class="button is-small rowButton">Dec</button></td>
+                        <td id="startProtect"></td>
+                    </tr>
+                  </table>
+
+                <button id="createGame" class="goToGame button">Start the game!</button>
             </div>
             
             <div id="gameLoader" style="display:none" class="menu">
-                <button class="goToMain">Main Menu</button>
+                <button class="goToMain button">Main Menu</button>
                 <p>You're loading a game</p>
                 <p>Select game here:</p>
                 <p>Bla</p>
-                <button class="goToGame">Load my game!</button>
+                <button class="goToGame button">Load my game!</button>
             </div>
             
             <div id="mainGame" style="display:none">
-                <button class="goToMain">Main Menu</button>
+                <button class="goToMain button">Main Menu</button>
                 <p>This is the game</p>
                 <p>This is a fire (use your imagination)</p>
                 <button class="goToInventory">Inventory</button>
                 <br/>
-                <button class="goToShop">Shop</button>
+                <button class="goToShop button">Shop</button>
             </div>
             
             <div id="inventoryScreen" style="display:none">
-                <button class="goToGame">Back to fire</button>
+                <button class="goToGame button">Back to fire</button>
                 <p>This your inventory</p>
                 <H1>Your things:</H1>
                 <ul id="inventoryItems">
@@ -56,7 +84,7 @@
             </div>
             
             <div id="shopScreen" style="display:none">
-                <button class="goToGame">Back to fire</button>
+                <button class="goToGame button">Back to fire</button>
                 <p>This is the shop</p>
                 <H1>Buy things:</H1>
                 <ul id="shopItems">
