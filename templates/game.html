@@ -3,6 +3,7 @@
 	<head>
 		<title>Ignis</title>
         <link rel="stylesheet" href="../static/styles.css">
+        <link rel="stylesheet" href="../static/shop.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -116,10 +117,13 @@
                     <button class="goToGame button is-small mainScreenButton">Back to Fire</button>
                 </div> <br>
                 <div id="restOfShop" style="width: 100%;">
-                    <strong style="color: white;">
-                        Welcome to the Shop!
-                    </strong>
-                    <div>Click an item to buy it.</div>
+                    <div id="shopDesc">
+                        <strong style="color: white;">
+                            Welcome to the Shop!
+                        </strong>
+                        <div>Click an item to buy it.</div>
+                    </div>
+                    
                     <table id="shopItems">
                     </table>
                 </div>

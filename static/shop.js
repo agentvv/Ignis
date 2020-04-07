@@ -21,15 +21,23 @@ function updateShop() {
         i++;
     }
     
-    var html = "";
+    var html = "<tr class=\"shopRow\">";
+
+    for (var i = 0; i < items.length; i++) {
+        html += "<td style=\"text-align: center;\"><img style=\"width:100px;height:100px;\" src=\"";
+        html += items[i].image;
+        html += "\"/></td>";
+    }
+
+    html += "</tr><tr class=\"shopRow\">";
 
     for (var i = 0; i < items.length; i++) {
         html += "<td style=\"text-align: center;\"><button class=\"shopButton button\" id=\"shop";
         html += items[i].name + "\">" + items[i].name;
-        html += "</button><img style=\"width:100px;height:100px;\" src=\"";
-        html += items[i].image;
-        html += "\"/></td>";
+        html += "</button></td>";
     }
+
+    html += "</tr>"
     
     document.getElementById("shopItems").innerHTML = html;
     
