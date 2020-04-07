@@ -23,6 +23,7 @@ class Item {
                 }
             }
         }
+        updateInventory();
     }
 }
 
@@ -48,7 +49,7 @@ class Wood extends Item {
     }
 }
 
-class Metals extends Item {
+class Metal extends Item {
     constructor(name, image, brightness, colour) {
         super(name, image);
         this.brightness = brightness;
@@ -85,7 +86,86 @@ class Structure extends Item {
 function updateInventory() {
     var html = "";
 
-    
+    for (var i = 0; i < inventory.items.length; i++) {
+        html += "<li><button id=invButton";
+        html += inventory.items[i].name + ">" + inventory.items[i].name;
+        html += "</button><img style=\"width:100px;height:100px;\" src=\"";
+        html += inventory.items[i].image;
+        html += "\"/></li>";
+        //if (i % 2 == 1) html += "</br>";
+    }
     
     document.getElementById("inventoryItems").innerHTML = html;
 }
+
+$("#invButtonBirch_Wood").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Birch_Wood") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonPine_Wood").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Pine_Wood") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonOak_Wood").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Oak_Wood") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonCopper_Shard").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Copper_Shard") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonRubidium_Shard").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Rubidium_Shard") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonSodium_Shard").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Sodium_Shard") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonCesium_Shard").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Cesium_Shard") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonWall_Layer").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Wall_Layer") {
+            inventory.items[i].use();
+        }
+    }
+});
+
+$("#invButtonRoof_Layer").click(function() {
+    for (var i = 0; i < inventory.items.length; i++) {
+        if (inventory.items[i].name == "Roof_Layer") {
+            inventory.items[i].use();
+        }
+    }
+});
