@@ -1,0 +1,25 @@
+html, body {
+    background-color: #bfbfbf;
+
+}
+
+#wrapper {
+    height: 400px;
+    width: 600px;
+    background-color: #ed8a34;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -300px;
+    margin-top: -200px;
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+}
