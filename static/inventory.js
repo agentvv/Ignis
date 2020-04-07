@@ -66,6 +66,7 @@ class Metal extends Item {
     use() {
         fire.brightness += this.brightness;
         fire.colour = this.colour;
+        fire.colourTime = 6;
         super.use();
     }
 }

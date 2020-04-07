@@ -7,6 +7,7 @@ var fire = {
     smokiness: 1000,
     protection: 1000,
     colour: "Default",
+    colourTime: 0,
 };
 
 function setGameDefaults() {
@@ -17,6 +18,7 @@ function setGameDefaults() {
         smokiness: 1000,
         protection: 1000,
         colour: "Default",
+        colourTime: 0,
     };
     inventory = {
         balance: 10,
@@ -27,23 +29,23 @@ function setGameDefaults() {
 function tick() {
     if (document.getElementById("mainScreenWrapper").style.display == "none")
         return;
-    
+
+    updateWeather();
     weatherEffects = getWeatherEffects();
     fire.size += 10 - weatherEffects[0];
     fire.heat += 10 - weatherEffects[1];
+
+    if (fire.colour !== "Default") {
+        fire.colourTime--;
+        if (fire.colourTime == 0) {
+            fire.colour = "Default";
+        }
+    }
 
     updateDisplay();
     return;
 }
 setInterval(tick, 10000);
-
-function updateBrightness() {
-    //fire.brightness = .5 + (Math.floor(fire.heat/10)/1000)*0.5;
-}
-
-function updateSmokiness() {
-    //fire.smokiness = .1 + (Math.floor(fire.size/10)/1000)*0.7;
-}
 
 function updateDisplay() {
     console.log("size: " + fire.size + " and heat: " + fire.heat);

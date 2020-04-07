@@ -2,13 +2,13 @@ var birch = new Wood("Birch_Wood", "static/images/birch.jpg", "wood", 1, 100, 10
 var pine = new Wood("Pine_Wood", "static/images/pine.jpg", "wood", 1, 50, 50, 50, 50);
 var oak = new Wood("Oak_Wood", "static/images/oak.jpg", "wood", 1, 50, 50, 50, 50);
 
-var copper = new Metal("Copper_Shard", "static/images/copper.jpg", "metal", 1, 50, 50);
-var rubidium = new Metal("Rubidium_Shard", "static/images/rubidium.jpg", "metal", 1, 50, 50);
-var sodium = new Metal("Sodium_Shard", "static/images/sodium.jpg", "metal", 1, 50, 50);
-var cesium = new Metal("Cesium_Shard", "static/images/cesium.jpg", "metal", 1, 50, 50);
+var copper = new Metal("Copper_Shard", "static/images/copper.jpg", "metal", 1, 50, "Green");
+var rubidium = new Metal("Rubidium_Shard", "static/images/rubidium.jpg", "metal", 1, 50, "Red");
+var sodium = new Metal("Sodium_Shard", "static/images/sodium.jpg", "metal", 1, 50, "Yellow");
+var cesium = new Metal("Cesium_Shard", "static/images/cesium.jpg", "metal", 1, 50, "Blue");
 
-var wall = new Metal("Wall_Layer", "static/images/wall.jpg", "structure", 1, 50);
-var roof = new Metal("Roof_Layer", "static/images/roof.jpg", "structure", 1, 50);
+var wall = new Structure("Wall_Layer", "static/images/wall.jpg", "structure", 1, 50);
+var roof = new Structure("Roof_Layer", "static/images/roof.jpg", "structure", 1, 50);
 
 var allItems = [birch, pine, oak, copper, rubidium, sodium, cesium, wall, roof];
 

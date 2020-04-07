@@ -21,7 +21,6 @@ function updateWeather() {
     });
     return;
 }
-setInterval(updateWeather, 30000);
 window.onload = updateWeather;
 
 function getWeatherEffects() {
