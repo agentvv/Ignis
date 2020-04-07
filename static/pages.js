@@ -62,18 +62,20 @@ $(".exit").click(function() {
 });
 
 
-var remainingStats = 15;
+
 
 function newGame() {
+    setGameDefaults();
+    var heat = 1000;
+    var brightness = 1000;
+    var smokiness = 1000;
+    var protection = 1000;
+    var remainingStats = 15;
     var remainingStatsDisplay = document.getElementById('statsRemaining');
     var heatDisplay = document.getElementById('startHeat');
     var brightDisplay = document.getElementById('startBright');
     var smokeDisplay = document.getElementById('startSmoke');
     var protectDisplay = document.getElementById('startProtect');
-    const minHeat = fire.heat;
-    const minBright = fire.brightness;
-    const minProtect = fire.protection;
-    const minSmoke = fire.smokiness;
 
     updateRemainingDisplay();
 
@@ -81,16 +83,16 @@ function newGame() {
     function incHeat() {
         if (remainingStats > 0) {
             remainingStats--;
-            fire.heat++;
-            updateRemainingDisplay()
+            heat++;
+            updateRemainingDisplay();
         }
     }
     document.getElementById('heatDec').addEventListener('click', decHeat);
     function decHeat() {
-        if (fire.heat > minHeat) {
+        if (fire.heat > 1000) {
             remainingStats++;  
-            fire.heat--;
-            updateRemainingDisplay()
+            heat--;
+            updateRemainingDisplay();
         }
     }
 
@@ -98,56 +100,65 @@ function newGame() {
     function incBright() {
         if (remainingStats > 0) {
             remainingStats--;
-            fire.brightness++;
-            updateRemainingDisplay()
+            brightness++;
+            updateRemainingDisplay();
         }
     }
-    $('#brightDec').click(function() {
-        if (fire.brightness > minBright) {
+    document.getElementById('brightDec').addEventListener('click', decBright);
+    function decBright() {
+        if (fire.brightness > 1000) {
             remainingStats++;
-            fire.brightness--;
-            updateRemainingDisplay()
+            brightness--;
+            updateRemainingDisplay();
         }
-    });
+    }
 
-    $('#smokeInc').click(function() {
+    document.getElementById('smokeInc').addEventListener('click', incSmoke);
+    function incSmoke() {
         if (remainingStats > 0) {
             remainingStats--;
-            fire.smokiness++;
-            updateRemainingDisplay()
+            smokiness++;
+            updateRemainingDisplay();
         }
-    });
-    $('#smokeDec').click(function() {
-        if (fire.smokiness > minHeat) {
+    }
+    document.getElementById('smokeDec').addEventListener('click', decSmoke);
+    function decSmoke() {
+        if (fire.smokiness > 1000) {
             remainingStats++;
-            fire.smokiness--;
-            updateRemainingDisplay()    
+            smokiness--;
+            updateRemainingDisplay();    
         }
         
-    });
+    }
 
-    $('#protectInc').click(function() {
+    document.getElementById('protectInc').addEventListener('click', incProtect);
+    function incProtect() {
         if (remainingStats > 0) {
             remainingStats--;
-            fire.protection++;
-            updateRemainingDisplay()
+            protection++;
+            updateRemainingDisplay();
         }
-    });
-    $('#protectDec').click(function() {
-        if (fire.protection > minProtect) {
+    }
+    document.getElementById('protectDec').addEventListener('click', decProtect);
+    function decProtect() {
+        if (fire.protection > 1000) {
             remainingStats++;
-            fire.protection--;
-            updateRemainingDisplay()
+            protection--;
+            updateRemainingDisplay();
         }
-    });
+    }
 
 
     function updateRemainingDisplay() {
         remainingStatsDisplay.innerHTML = "Stats Remaining: " + remainingStats.toString();
-        heatDisplay.innerHTML = fire.heat.toString();
-        brightDisplay.innerHTML = fire.brightness.toString();
-        smokeDisplay.innerHTML = fire.smokiness.toString();
-        protectDisplay.innerHTML = fire.protection.toString();
+        heatDisplay.innerHTML = heat.toString();
+        brightDisplay.innerHTML = brightness.toString();
+        smokeDisplay.innerHTML = smokiness.toString();
+        protectDisplay.innerHTML = protection.toString();
+        fire.heat = heat;
+        fire.brightness = brightness;
+        fire.smokiness = smokiness;
+        fire.protection = protection;
     }
     
 }
