@@ -1,15 +1,17 @@
-from flask import Blueprint, render_template
+
+from flask import Blueprint, render_template, request
 import json
 
 game = Blueprint('game', __name__)
 
 from main import db
+from models import SavedGame
 
 @game.route('/')
 def playGame():
     return render_template('game.html')
 
-@game.route('/api/new')
+@game.route('/api/new', methods=['POST'])
 def new():
     data = request.json
     name = data[0]
