@@ -92,16 +92,16 @@ function newGame() {
             fire.heat--;
             updateRemainingDisplay()
         }
-    });
+    }
 
     document.getElementById('brightInc').addEventListener('click', incBright);
-    function() {
+    function incBright() {
         if (remainingStats > 0) {
             remainingStats--;
             fire.brightness++;
             updateRemainingDisplay()
         }
-    });
+    }
     $('#brightDec').click(function() {
         if (fire.brightness > minBright) {
             remainingStats++;
