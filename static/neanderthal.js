@@ -4,7 +4,7 @@ function neanderthal() {
     console.log("Here1");
     var rnd = Math.random * 100;
     var speedFactor = fire.brightness + fire.smokiness;
-    if ((ticksSince * 10 * (speedFactor/20000)) > rnd) {
+    if ((ticksSince * 10 * (speedFactor/10000)) > rnd) {
         console.log("Here2");
         var sizeChange = Math.floor(0.05 * fire.size);
         fire.size -= sizeChange;
@@ -14,8 +14,20 @@ function neanderthal() {
         }
         inventory.balance += balanceChange;
         ticksSince = 0;
+        displayNeanderthal();
     } else {
         console.log("Here3");
         ticksSince += 1;
     }
+}
+
+function displayNeanderthal() {
+    //var neanderthalDisplay = document.getElementById("neanderthal");
+    //neanderthalDisplay.style.display = "block"
+    console.log("Displaying Neanderthal");
+
+    setTimeout(function(){
+        console.log("Finished Displaying Neanderthal");
+        //neanderthalDisplay.style.display = "none"
+    }, 5000);
 }

@@ -52,8 +52,74 @@ setInterval(tick, 10000);
 function updateDisplay() {
     console.log("size: " + fire.size + " and heat: " + fire.heat);
     console.log(currentWeather);
-    //document.getElementById("fire").style.opacity = fire.brightness;
-    //document.getElementById("smoke").style.opacity = fire.smokiness;
+
+    //var fireDisplay = document.getElementById("fire");
+
+    var fireWidth = (fire.size/10000) * 250 + 50;
+    var bright = (fire.brightness / 10000) * 0.5 + 0.5;
+    var smoke = (fire.smokiness / 10000) * 0.8 + 0.1;
+    
+    //fireDisplay.style.width = fireWidth;
+    //fireDisplay.style.opacity = bright;
+    //document.getElementById("smoke").style.opacity = smoke;
+
+    var pos = 20;
+    //var tmp = fireDisplay.innerHTML;
+    if (fire.colour === "Default") {
+        //fireDisplay.innerHTML = tmp.slice(0, pos) + "0" + tmp.slice(pos+1, tmp.length);
+    } else if (fire.colour === "Blue") {
+        //fireDisplay.innerHTML = tmp.slice(0, pos) + "1" + tmp.slice(pos+1, tmp.length);
+    } else if (fire.colour === "Green") {
+        //fireDisplay.innerHTML = tmp.slice(0, pos) + "2" + tmp.slice(pos+1, tmp.length);
+    } else if (fire.colour === "Red") {
+        //fireDisplay.innerHTML = tmp.slice(0, pos) + "3" + tmp.slice(pos+1, tmp.length);
+    } else if (fire.colour === "Yellow") {
+        //fireDisplay.innerHTML = tmp.slice(0, pos) + "4" + tmp.slice(pos+1, tmp.length);
+    }
+
+    document.getElementById("sizeStat").innerHTML = "Size: " + fire.size;
+    document.getElementById("heatStat").innerHTML = "Heat: " + fire.heat;
+    document.getElementById("brightStat").innerHTML = "Brightness: " + fire.brightness;
+    document.getElementById("smokeStat").innerHTML = "Smokiness: " + fire.smokiness;
+    document.getElementById("protectionStat").innerHTML = "Protection: " + fire.protection;
+
+    
+    var str = currentWeather.temp.toFixed(2);
+    var i = str.length-1;
+    for (; i > 0; i--) {
+        if (str[i] === ".") {
+            break;
+        } else if (str[i] !== "0") {
+            i++;
+            break;
+        } 
+    }
+    document.getElementById("tempStat").innerHTML = "Temperature: " + str.slice(0, i);
+
+    str = currentWeather.humidity.toFixed(2);
+    i = str.length-1;
+    for (; i > 0; i--) {
+        if (str[i] === ".") {
+            break;
+        } else if (str[i] !== "0") {
+            i++;
+            break;
+        } 
+    }
+    document.getElementById("humidityStat").innerHTML = "Humidity: " + str.slice(0, i);
+    
+    str = currentWeather.wind.toFixed(2);
+    i = str.length-1;
+    for (; i > 0; i--) {
+        if (str[i] === ".") {
+            break;
+        } else if (str[i] !== "0") {
+            i++;
+            break;
+        } 
+    }
+    document.getElementById("windStat").innerHTML = "Wind Speed: " + str.slice(0, i);
+    document.getElementById("weatherTypeStat").innerHTML = "Weather Type: " + currentWeather.type;
 }
 
 var backgnd = 'hill'
