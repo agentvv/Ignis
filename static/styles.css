@@ -15,7 +15,6 @@ html, body {
     margin-top: -200px;
     display: flex;
     justify-content: center;
-    border: 3px solid black;
 }
 
 .menu {
@@ -40,8 +39,23 @@ html, body {
 }
 
 #mainGame {
-    background-image: url(assets/mainbackground.jpg);
+    height: 100%;
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+}
+
+.mainScreenButton {
+    margin: 10px 5px 10px 5px;
+}
+
+.topBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#mainScreenWrapper {
+    height: 100%;
 }

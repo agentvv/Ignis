@@ -34,3 +34,45 @@ function updateDisplay() {
     //document.getElementById("fire").style.opacity = fire.brightness;
     //document.getElementById("smoke").style.opacity = fire.smokiness;
 }
+
+var backgnd = 'hill'
+
+document.getElementById('toggleBackground').addEventListener('click', toggleBackground);
+
+function toggleBackground(){
+    if (backgnd == 'hill') {
+        var backgroundnum = document.getElementById('mainScreenWrapper').innerHTML;
+        var newHTML = backgroundnum.slice(0, 61+25) + '2' + backgroundnum.slice(61+26, backgroundnum.length);
+        document.getElementById('mainScreenWrapper').innerHTML = newHTML;
+        backgnd = '';
+        document.getElementById('toggleBackground').addEventListener('click', toggleBackground);
+        $(".goToShop").click(function() {
+            loadPage(4);
+            updateShop();
+        });
+        
+        $(".goToInventory").click(function() {
+            loadPage(5);
+        });
+        $(".goToMain").click(function() {
+            loadPage(0);
+        });
+    } else {
+        var backgroundnum = document.getElementById('mainScreenWrapper').innerHTML;
+        var newHTML = backgroundnum.slice(0, 61+25) + '1' + backgroundnum.slice(61+26, backgroundnum.length);
+        document.getElementById('mainScreenWrapper').innerHTML = newHTML;
+        backgnd = 'hill';
+        document.getElementById('toggleBackground').addEventListener('click', toggleBackground);
+        $(".goToShop").click(function() {
+            loadPage(4);
+            updateShop();
+        });
+        
+        $(".goToInventory").click(function() {
+            loadPage(5);
+        });
+        $(".goToMain").click(function() {
+            loadPage(0);
+        });
+    }
+}

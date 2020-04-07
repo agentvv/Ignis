@@ -30,9 +30,9 @@ function loadPage(page) {
         document.getElementById("mainMenu").style.display = "none";
     }
     if (page == 1) {
-        document.getElementById("mainGame").style.display = "block";
+        document.getElementById("mainScreenWrapper").style.display = "block";
     } else {
-        document.getElementById("mainGame").style.display = "none";
+        document.getElementById("mainScreenWrapper").style.display = "none";
     }
     if (page == 2) {
         document.getElementById("gameCreater").style.display = "flex";
