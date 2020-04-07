@@ -8,8 +8,9 @@ $('#createGame').click(function () {
             inventory: inventory, 
         }
         createGame(game);
+        loadPage(1);
     } else {
-        alert('Please enter a name for your fire or use the rest of your stats to create a fire.')
+        alert('Please enter a name for your fire or use the rest of your stats to create a fire.');
     }
 });
 

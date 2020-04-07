@@ -14,8 +14,8 @@ def playGame():
 @game.route('/api/new', methods=['POST'])
 def new():
     data = request.json
-    name = data[0]
-    gameState = json.dumps(data[1])
+    name = data['name']
+    gameState = json.dumps(data)
 
     game = SavedGame(name=name, gameState=gameState)
 
