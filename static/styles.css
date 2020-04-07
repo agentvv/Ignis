@@ -38,3 +38,10 @@ html, body {
 .rowButton{
     margin: 5px 0 5px 0;
 }
+
+#mainGame {
+    background-image: url(assets/mainbackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
