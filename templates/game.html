@@ -2,64 +2,67 @@
 <html>
 	<head>
 		<title>Ignis</title>
-    	<link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
+    	<link rel="stylesheet" href="../static/styles.css">
     </head>
 
 	<body>
-        <div id="mainMenu">
-            This is the main menu
-            <br/>
-            <button class="newGame">New Game</button>
-            <br/>
-            <button class="loadGame">Load Game</button>
-            <br/>
-            <button class="exit">Close App</button>
+        <div id="wrapper">
+            <div id="mainMenu" class="menu">
+                This is the main menu
+                <br/>
+                <button class="newGame">New Game</button>
+                <br/>
+                <button class="loadGame">Load Game</button>
+                <br/>
+                <button class="exit">Close App</button>
+            </div>
+            
+            <div id="gameCreater" style="display:none" class="menu">
+                <button class="goToMain">Main Menu</button>
+                <p>You're creating a new game</p>
+                <p>Enter stats here:</p>
+                <p>Bla</p>
+                <button class="goToGame">Start the game!</button>
+            </div>
+            
+            <div id="gameLoader" style="display:none" class="menu">
+                <button class="goToMain">Main Menu</button>
+                <p>You're loading a game</p>
+                <p>Select game here:</p>
+                <p>Bla</p>
+                <button class="goToGame">Load my game!</button>
+            </div>
+            
+            <div id="mainGame" style="display:none">
+                <button class="goToMain">Main Menu</button>
+                <p>This is the game</p>
+                <p>This is a fire (use your imagination)</p>
+                <button class="goToInventory">Inventory</button>
+                <br/>
+                <button class="goToShop">Shop</button>
+            </div>
+            
+            <div id="inventoryScreen" style="display:none">
+                <button class="goToGame">Back to fire</button>
+                <p>This your inventory</p>
+                <H1>Your things:</H1>
+                <ul id="inventoryItems">
+                    <li><button>Thing 1</button></li>
+                    <li><button>Thing 2</button></li>
+                </ul>
+            </div>
+            
+            <div id="shopScreen" style="display:none">
+                <button class="goToGame">Back to fire</button>
+                <p>This is the shop</p>
+                <H1>Buy things:</H1>
+                <ul id="shopItems">
+                    <li><button>Thing 1</button></li>
+                    <li><button>Thing 2</button></li>
+                </ul>
+            </div>
         </div>
         
-        <div id="gameCreater" style="display:none">
-            <button class="goToMain">Main Menu</button>
-            <p>You're creating a new game</p>
-            <p>Enter stats here:</p>
-            <p>Bla</p>
-            <button class="goToGame">Start the game!</button>
-        </div>
-        
-        <div id="gameLoader" style="display:none">
-            <button class="goToMain">Main Menu</button>
-            <p>You're loading a game</p>
-            <p>Select game here:</p>
-            <p>Bla</p>
-            <button class="goToGame">Load my game!</button>
-        </div>
-        
-        <div id="mainGame" style="display:none">
-            <button class="goToMain">Main Menu</button>
-            <p>This is the game</p>
-            <p>This is a fire (use your imagination)</p>
-            <button class="goToInventory">Inventory</button>
-            <br/>
-            <button class="goToShop">Shop</button>
-        </div>
-        
-        <div id="inventoryScreen" style="display:none">
-            <button class="goToGame">Back to fire</button>
-            <p>This your inventory</p>
-            <H1>Your things:</H1>
-            <ul id="inventoryItems">
-                <li><button>Thing 1</button></li>
-                <li><button>Thing 2</button></li>
-            </ul>
-        </div>
-        
-        <div id="shopScreen" style="display:none">
-            <button class="goToGame">Back to fire</button>
-            <p>This is the shop</p>
-            <H1>Buy things:</H1>
-            <ul id="shopItems">
-                <li><button>Thing 1</button></li>
-                <li><button>Thing 2</button></li>
-            </ul>
-        </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="../static/pages.js"></script>
