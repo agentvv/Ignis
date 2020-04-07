@@ -57,7 +57,7 @@ function loadPage(page) {
 }
 
 $(".exit").click(function() {
-    window.location.href = "http://www.google.com";
+    window.location.href = "https://www.jotform.com/62425974782164";
 });
 
 

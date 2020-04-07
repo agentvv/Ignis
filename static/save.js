@@ -28,3 +28,26 @@ function createGame(game) {
         }
     });
 }
+
+
+$('#loadGameButton').click(loadGames);
+    
+function loadGames() {
+    console.log('Load game');
+    $.ajax({
+        type: 'GET', 
+        url: '/api/all',
+        success: function(data) {
+            data = JSON.parse(data);
+            var loadGameSelect = document.getElementById('loadGameSelect');
+            var games = "";
+            for (var i = 0; i < data.length; i++) {
+                games += '<option value="' + data[i].id.toString() + '">' + data[i].name + '</option>';
+            }
+            loadGameSelect.innerHTML = games;
+        },
+        error: function (error) {
+            console.error(error);
+        }
+    });
+};

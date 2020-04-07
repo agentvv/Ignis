@@ -31,8 +31,17 @@ def new():
     
 
 
-@game.route('/api/load')
+@game.route('/api/load', methods=['POST'])
 def load():
     data = request.json
     game = SavedGame.query.filter_by(id=data).first()
     return json.loads(game.gameState)
+
+@game.route('/api/all', methods=['GET'])
+def all():
+    games = SavedGame.query.all()
+    gameList = []
+    for game in games:
+        gameList.append({"id": game.id, "name": game.name})
+
+    return json.dumps(gameList)

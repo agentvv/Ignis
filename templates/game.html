@@ -14,7 +14,7 @@
                 <br/>
                 <button class="newGame button">New Game</button>
                 <br/>
-                <button class="loadGame button">Load Game</button>
+                <button id="loadGameButton" class="loadGame button">Load Game</button>
                 <br/>
                 <button class="exit button">Close App</button>
             </div>
@@ -57,10 +57,16 @@
             </div>
             
             <div id="gameLoader" style="display:none" class="menu">
-                <button class="goToMain button">Main Menu</button>
-                <p>You're loading a game</p>
-                <p>Select game here:</p>
-                <p>Bla</p>
+                <button class="goToMain button backToMenu">Main Menu</button>
+                <strong style="color: white;">
+                    <p>Select a game to load:</p>
+                </strong>
+
+                
+                <select name="" id="loadGameSelect" class="select" style="margin: 25px 0 25px 0;">
+                </select>
+                
+
                 <button class="goToGame button">Load my game!</button>
             </div>
             
