@@ -1,14 +1,23 @@
 $('#createGame').click(function () {
     console.log('Button clicked');
-    createGame();
+    name = document.getElementById('fireName').value;
+    if (name != ""){
+        var game = {
+            name: name,
+            fire: fire, 
+            inventory: inventory, 
+        }
+        createGame(game);
+    } else {
+        alert('Please enter a name for your fire.')
+    }
 });
 
-
-function createGame() {
+function createGame(game) {
     $.ajax({
         type: 'POST',
         url: '/api/new',
-        data: JSON.stringify(['test', 'fakegamestate']),
+        data: JSON.stringify(game),
         contentType: 'application/json',
         success: function (data) {
             console.log(data);
