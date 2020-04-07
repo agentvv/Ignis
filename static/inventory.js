@@ -4,9 +4,11 @@ var inventory = {
 };
 
 class Item {
-    constructor(name, image) {
+    constructor(name, image, subtype, cost) {
         this.name = name;
         this.image = image;
+        this.cost = cost;
+        this.subtype = subtype;
         this.num = 1;
     }
 
@@ -24,12 +26,13 @@ class Item {
             }
         }
         updateInventory();
+        updateDisplay();
     }
 }
 
 class Wood extends Item {
-    constructor(name, image, size, heat, brightness, smokiness) {
-        super(name, image);
+    constructor(name, image, subtype, cost, size, heat, brightness, smokiness) {
+        super(name, image, subtype, cost);
         this.size = size;
         this.heat = heat;
         this.brightness = brightness;
@@ -50,8 +53,8 @@ class Wood extends Item {
 }
 
 class Metal extends Item {
-    constructor(name, image, brightness, colour) {
-        super(name, image);
+    constructor(name, image, subtype, cost, brightness, colour) {
+        super(name, image, subtype, cost);
         this.brightness = brightness;
         this.colour = colour;
     }
@@ -68,8 +71,8 @@ class Metal extends Item {
 }
 
 class Structure extends Item {
-    constructor(name, image, protection) {
-        super(name, image);
+    constructor(name, image, subtype, cost, protection) {
+        super(name, image, subtype, cost);
         this.protection = protection;
     }
 
@@ -87,85 +90,26 @@ function updateInventory() {
     var html = "";
 
     for (var i = 0; i < inventory.items.length; i++) {
-        html += "<li><button id=invButton";
-        html += inventory.items[i].name + ">" + inventory.items[i].name;
+        html += "<li><button class=\"invButton\" id=\"inv";
+        html += inventory.items[i].name + "\">" + inventory.items[i].name;
         html += "</button><img style=\"width:100px;height:100px;\" src=\"";
         html += inventory.items[i].image;
         html += "\"/></li>";
-        //if (i % 2 == 1) html += "</br>";
     }
     
     document.getElementById("inventoryItems").innerHTML = html;
+    
+    var buttons = document.getElementsByClassName("invButton");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", itemUse);
+    }
 }
 
-$("#invButtonBirch_Wood").click(function() {
+function itemUse(event) {
+    var item = event.target.id.slice(3, event.target.id.length);
     for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Birch_Wood") {
+        if (inventory.items[i].name == item) {
             inventory.items[i].use();
         }
     }
-});
-
-$("#invButtonPine_Wood").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Pine_Wood") {
-            inventory.items[i].use();
-        }
-    }
-});
-
-$("#invButtonOak_Wood").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Oak_Wood") {
-            inventory.items[i].use();
-        }
-    }
-});
-
-$("#invButtonCopper_Shard").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Copper_Shard") {
-            inventory.items[i].use();
-        }
-    }
-});
-
-$("#invButtonRubidium_Shard").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Rubidium_Shard") {
-            inventory.items[i].use();
-        }
-    }
-});
-
-$("#invButtonSodium_Shard").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Sodium_Shard") {
-            inventory.items[i].use();
-        }
-    }
-});
-
-$("#invButtonCesium_Shard").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Cesium_Shard") {
-            inventory.items[i].use();
-        }
-    }
-});
-
-$("#invButtonWall_Layer").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Wall_Layer") {
-            inventory.items[i].use();
-        }
-    }
-});
-
-$("#invButtonRoof_Layer").click(function() {
-    for (var i = 0; i < inventory.items.length; i++) {
-        if (inventory.items[i].name == "Roof_Layer") {
-            inventory.items[i].use();
-        }
-    }
-});
+}
