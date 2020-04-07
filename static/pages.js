@@ -62,7 +62,7 @@ $(".exit").click(function() {
 });
 
 
-
+var remainingStatsGlobal = 15;
 
 function newGame() {
     setGameDefaults();
@@ -159,6 +159,7 @@ function newGame() {
         fire.brightness = brightness;
         fire.smokiness = smokiness;
         fire.protection = protection;
+        remainingStatsGlobal = remainingStats;
     }
     
 }

@@ -2,7 +2,7 @@ var name = "";
 $('#createGame').click(function () {
     console.log('Button clicked');
     name = document.getElementById('fireName').value;
-    if (name != "" && remainingStats == 0){
+    if (name != "" && remainingStatsGlobal == 0){
         var game = {
             name: name,
             fire: fire, 
