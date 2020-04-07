@@ -50,16 +50,27 @@ function tick() {
 setInterval(tick, 10000);
 
 function updateDisplay() {
-    console.log("size: " + fire.size + " and heat: " + fire.heat);
-    console.log(currentWeather);
+    //console.log("size: " + fire.size + " and heat: " + fire.heat);
+    //console.log(currentWeather);
 
-    //var fireDisplay = document.getElementById("fire");
+    var fireDisplay = document.getElementById("fire");
 
-    var fireWidth = (fire.size/10000) * 250 + 50;
+    var fireWidth = Math.round((fire.size/10000) * 200) + 50;
+    var fireTop = Math.round((fire.size/10000) * (-200)) - 20;
+    var fireLeft = Math.round((fire.size/10000) * (-100)) + 400;
     var bright = (fire.brightness / 10000) * 0.5 + 0.5;
     var smoke = (fire.smokiness / 10000) * 0.8 + 0.1;
+
+    console.log(fireWidth);
+    console.log(fireWidth + "px");
+    console.log(fireTop);
+    console.log(fireTop + "px");
+    console.log(fireLeft);
+    console.log(fireLeft + "px");
     
-    //fireDisplay.style.width = fireWidth;
+    fireDisplay.style.width = fireWidth + "px";
+    fireDisplay.style.marginTop = fireTop + "px";
+    fireDisplay.style.marginLeft = fireLeft + "px";
     //fireDisplay.style.opacity = bright;
     //document.getElementById("smoke").style.opacity = smoke;
 
