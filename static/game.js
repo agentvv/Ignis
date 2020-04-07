@@ -1,11 +1,11 @@
 var fire = {
     size: 1000,
     heat: 1000,
-    brightness: 0,
-    smokiness: 0,
-    colour: 0,
-    protection: 0
-}
+    brightness: 1000,
+    smokiness: 1000,
+    protection: 1000,
+    colour: "Default",
+};
 
 function tick() {
     if (document.getElementById("mainGame").style.display == "none")
@@ -14,9 +14,6 @@ function tick() {
     weatherEffects = getWeatherEffects();
     fire.size += 10 - weatherEffects[0];
     fire.heat += 10 - weatherEffects[1];
-    
-    updateBrightness();
-    updateSmokiness();
 
     updateDisplay();
     return;
@@ -24,15 +21,16 @@ function tick() {
 setInterval(tick, 10000);
 
 function updateBrightness() {
-    fire.brightness = .5 + (Math.floor(fire.heat/10)/1000)*0.5;
+    //fire.brightness = .5 + (Math.floor(fire.heat/10)/1000)*0.5;
 }
 
 function updateSmokiness() {
-    fire.smokiness = .1 + (Math.floor(fire.size/10)/1000)*0.7;
+    //fire.smokiness = .1 + (Math.floor(fire.size/10)/1000)*0.7;
 }
 
 function updateDisplay() {
     console.log("size: " + fire.size + " and heat: " + fire.heat);
+    console.log(currentWeather);
     //document.getElementById("fire").style.opacity = fire.brightness;
     //document.getElementById("smoke").style.opacity = fire.smokiness;
 }

@@ -16,6 +16,7 @@ $(".goToGame").click(function() {
 
 $(".goToShop").click(function() {
     loadPage(4);
+    updateShop();
 });
 
 $(".goToInventory").click(function() {
