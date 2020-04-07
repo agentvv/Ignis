@@ -29,7 +29,7 @@ function loadPage(page) {
         document.getElementById("mainMenu").style.display = "none";
     }
     if (page == 1) {
-        document.getElementById("mainGame").style.display = "flex";
+        document.getElementById("mainGame").style.display = "block";
     } else {
         document.getElementById("mainGame").style.display = "none";
     }
@@ -44,12 +44,12 @@ function loadPage(page) {
         document.getElementById("gameLoader").style.display = "none";
     }
     if (page == 4) {
-        document.getElementById("shopScreen").style.display = "flex";
+        document.getElementById("shopScreen").style.display = "block";
     } else {
         document.getElementById("shopScreen").style.display = "none";
     }
     if (page == 5) {
-        document.getElementById("inventoryScreen").style.display = "flex";
+        document.getElementById("inventoryScreen").style.display = "block";
     } else {
         document.getElementById("inventoryScreen").style.display = "none";
     }
