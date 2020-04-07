@@ -36,11 +36,22 @@
             <button class="goToMain">Main Menu</button>
             <p>This is the game</p>
             <p>This is a fire (use your imagination)</p>
-            <p>This is your inventory (use your imagination)</p>
+            <button class="goToInventory">Inventory</button>
+            <br/>
             <button class="goToShop">Shop</button>
         </div>
         
-        <div id="shop" style="display:none">
+        <div id="inventoryScreen" style="display:none">
+            <button class="goToGame">Back to fire</button>
+            <p>This your inventory</p>
+            <H1>Your things:</H1>
+            <ul id="inventoryItems">
+                <li><button>Thing 1</button></li>
+                <li><button>Thing 2</button></li>
+            </ul>
+        </div>
+        
+        <div id="shopScreen" style="display:none">
             <button class="goToGame">Back to fire</button>
             <p>This is the shop</p>
             <H1>Buy things:</H1>
@@ -51,6 +62,10 @@
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="../static/main.js"></script>
+        <script src="../static/pages.js"></script>
+        <script src="../static/game.js"></script>
+        <script src="../static/save.js"></script>
+        <script src="../static/shop.js"></script>
+        <script src="../static/weather.js"></script>
     </body>
 </html>
