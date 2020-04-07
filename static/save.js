@@ -82,7 +82,10 @@ function saveGame() {
                 protection: 1000,
                 colour: "Default",
             };
-            inventory = {};
+            inventory = {
+                balance: 10,
+                items: []
+            };
             name = "";
         }, 
         error: function(error) {
