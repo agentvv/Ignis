@@ -59,3 +59,9 @@ html, body {
 #mainScreenWrapper {
     height: 100%;
 }
+
+.statsDisplay {
+    background-color: #353535;
+    opacity: 0.8;
+    display: flex;
+}
