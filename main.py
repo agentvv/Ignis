@@ -6,7 +6,7 @@ db = SQLAlchemy()
 
 app = Flask(__name__, template_folder='./templates')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:ubuntu@localhost:5432/ignis'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Italia13254@localhost:5432/ignis'
 app.config['TESTING'] = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

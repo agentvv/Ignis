@@ -77,14 +77,16 @@ function newGame() {
 
     updateRemainingDisplay();
 
-    $('#heatInc').click(function() {
+    document.getElementById('heatInc').addEventListener('click', incHeat);
+    function incHeat() {
         if (remainingStats > 0) {
             remainingStats--;
             fire.heat++;
             updateRemainingDisplay()
         }
-    });
-    $('#heatDec').click(function() {
+    }
+    document.getElementById('heatDec').addEventListener('click', decHeat);
+    function decHeat() {
         if (fire.heat > minHeat) {
             remainingStats++;  
             fire.heat--;
@@ -92,7 +94,8 @@ function newGame() {
         }
     });
 
-    $('#brightInc').click(function() {
+    document.getElementById('brightInc').addEventListener('click', incBright);
+    function() {
         if (remainingStats > 0) {
             remainingStats--;
             fire.brightness++;

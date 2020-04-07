@@ -9,6 +9,21 @@ var fire = {
     colour: "Default",
 };
 
+function setGameDefaults() {
+    fire = {
+        size: 1000,
+        heat: 1000,
+        brightness: 1000,
+        smokiness: 1000,
+        protection: 1000,
+        colour: "Default",
+    };
+    inventory = {
+        balance: 10,
+        items: []
+    }
+}
+
 function tick() {
     if (document.getElementById("mainScreenWrapper").style.display == "none")
         return;
