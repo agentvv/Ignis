@@ -1,5 +1,5 @@
 var inventory = {
-    balance: 0,
+    balance: 10,
     items: [],
 };
 
