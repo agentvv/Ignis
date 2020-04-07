@@ -1,6 +1,6 @@
 var birch = new Wood("Birch_Wood", "static/images/birch.jpg", "wood", 1, 100, 100, 100, 100);
 var pine = new Wood("Pine_Wood", "static/images/pine.jpg", "wood", 1, 50, 50, 50, 50);
-var oak = new Wood("Oak_Wood", "static/images/pine.jpg", "wood", 1, 50, 50, 50, 50);
+var oak = new Wood("Oak_Wood", "static/images/oak.jpg", "wood", 1, 50, 50, 50, 50);
 
 var copper = new Metal("Copper_Shard", "static/images/copper.jpg", "metal", 1, 50, 50);
 var rubidium = new Metal("Rubidium_Shard", "static/images/rubidium.jpg", "metal", 1, 50, 50);
@@ -16,7 +16,6 @@ function updateShop() {
     items = [];
     for (var i = 0; i < 3; ) {
         var curr = Math.floor(Math.random() * 9);
-        console.log(curr);
         if (items.includes(allItems[curr])) continue;
         items.push(allItems[curr]);
         i++;
@@ -43,13 +42,17 @@ function updateShop() {
 function itemBuy(event) {
     var item = (event.target.id).slice(4, event.target.id.length);
     for (var i = 0; i < allItems.length; i++) {
-        if (allItems[i].name == item) {
+        if (allItems[i].name === item) {
+            console.log(allItems[i].name)
+            console.log(item)
+            console.log(allItems[i].name === item)
             if (inventory.balance < allItems[i].cost) {
                 alert("You don't have enough sharp rocks to buy that");
+                return;
             } else {
-                for (var i = 0; i < inventory.items.length; i++) {
-                    if (inventory.items[i].name == item) {
-                        inventory.items[i].add();
+                for (var j = 0; j < inventory.items.length; j++) {
+                    if (inventory.items[j].name === item) {
+                        inventory.items[j].add();
                         inventory.balance -= allItems[i].cost;
                         updateInventory();
                         alert("Item bought");
@@ -57,15 +60,16 @@ function itemBuy(event) {
                     }
                 }
                 var tmp = {};
-                if (allItems[i].subtype == "wood") tmp = new Wood();
-                else if (allItems[i].subtype == "metal") tmp = new Metal();
-                else if (allItems[i].subtype == "structure") tmp = new Structure();
+                if (allItems[i].subtype === "wood") tmp = new Wood();
+                else if (allItems[i].subtype === "metal") tmp = new Metal();
+                else if (allItems[i].subtype === "structure") tmp = new Structure();
                 
                 Object.assign(tmp, allItems[i]);
                 inventory.items.push(tmp);
                 inventory.balance -= allItems[i].cost;
                 updateInventory();
                 alert("Item bought");
+                return;
             }
         }
     }
