@@ -72,3 +72,12 @@ html, body {
 .mainMenuButton {
     margin: 10px;
 }
+
+#restOfShop {
+    position: absolute;
+    left: 50%;
+    width: 600px;
+    margin-left: -300px;
+    padding-left: 30px;
+    padding-right: 30px;
+}

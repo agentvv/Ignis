@@ -24,11 +24,11 @@ function updateShop() {
     var html = "";
 
     for (var i = 0; i < items.length; i++) {
-        html += "<div><button class=\"shopButton button\" id=\"shop";
+        html += "<td style=\"text-align: center;\"><button class=\"shopButton button\" id=\"shop";
         html += items[i].name + "\">" + items[i].name;
         html += "</button><img style=\"width:100px;height:100px;\" src=\"";
         html += items[i].image;
-        html += "\"/></div>";
+        html += "\"/></td>";
     }
     
     document.getElementById("shopItems").innerHTML = html;
