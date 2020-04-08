@@ -72,7 +72,8 @@ function newGame() {
     var brightness = 1000;
     var smokiness = 1000;
     var protection = 1000;
-    var remainingStats = 15;
+    var remainingStats = 2000;
+    var p = 100;
     var remainingStatsDisplay = document.getElementById('statsRemaining');
     var heatDisplay = document.getElementById('startHeat');
     var brightDisplay = document.getElementById('startBright');
@@ -84,16 +85,16 @@ function newGame() {
     document.getElementById('heatInc').addEventListener('click', incHeat);
     function incHeat() {
         if (remainingStats > 0) {
-            remainingStats--;
-            heat++;
+            remainingStats -= p;
+            heat += p;
             updateRemainingDisplay();
         }
     }
     document.getElementById('heatDec').addEventListener('click', decHeat);
     function decHeat() {
         if (fire.heat > 1000) {
-            remainingStats++;  
-            heat--;
+            remainingStats += p;  
+            heat -= p;
             updateRemainingDisplay();
         }
     }
@@ -101,16 +102,16 @@ function newGame() {
     document.getElementById('brightInc').addEventListener('click', incBright);
     function incBright() {
         if (remainingStats > 0) {
-            remainingStats--;
-            brightness++;
+            remainingStats -= p;
+            brightness += p;
             updateRemainingDisplay();
         }
     }
     document.getElementById('brightDec').addEventListener('click', decBright);
     function decBright() {
         if (fire.brightness > 1000) {
-            remainingStats++;
-            brightness--;
+            remainingStats += p;
+            brightness -= p;
             updateRemainingDisplay();
         }
     }
@@ -118,16 +119,16 @@ function newGame() {
     document.getElementById('smokeInc').addEventListener('click', incSmoke);
     function incSmoke() {
         if (remainingStats > 0) {
-            remainingStats--;
-            smokiness++;
+            remainingStats -= p;
+            smokiness += p;
             updateRemainingDisplay();
         }
     }
     document.getElementById('smokeDec').addEventListener('click', decSmoke);
     function decSmoke() {
         if (fire.smokiness > 1000) {
-            remainingStats++;
-            smokiness--;
+            remainingStats += p;
+            smokiness -= p;
             updateRemainingDisplay();    
         }
         
@@ -136,16 +137,16 @@ function newGame() {
     document.getElementById('protectInc').addEventListener('click', incProtect);
     function incProtect() {
         if (remainingStats > 0) {
-            remainingStats--;
-            protection++;
+            remainingStats -= p;
+            protection += p;
             updateRemainingDisplay();
         }
     }
     document.getElementById('protectDec').addEventListener('click', decProtect);
     function decProtect() {
         if (fire.protection > 1000) {
-            remainingStats++;
-            protection--;
+            remainingStats += p;
+            protection -= p;
             updateRemainingDisplay();
         }
     }
