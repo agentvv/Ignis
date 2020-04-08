@@ -64,6 +64,7 @@ function itemBuy(event) {
                         inventory.items[j].add();
                         inventory.balance -= allItems[i].cost;
                         updateInventory();
+                        document.getElementById('shopBalanceDisplay').innerHTML = "Sharp Rocks: " + inventory.balance.toString();
                         alert("Item bought");
                         return;
                     }
