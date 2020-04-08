@@ -51,15 +51,15 @@ function getWeatherEffects() {
         console.log('Big weather event');
     }
 
-    if (timeSinceLastBigWeather > 11) {
+    if (timeSinceLastBigWeather > 10) {
         timeSinceLastBigWeather = 0;
-        totalWeather = Math.round(((Math.random() * 100) / 2 + 20));
+        totalWeather = Math.round(((Math.random() * 1000) + 200));
         console.log('Random weather event');
     }
 
     totalWeather = Math.round(totalWeather * (1 - (fire.protection/10000)));
     console.log('Total weather before fire size: ' + totalWeather.toString());
     timeSinceLastBigWeather++;
-    totalWeather = Math.ceil((fire.size / 4000) * totalWeather)
+    totalWeather = Math.ceil((fire.size / 2000) * totalWeather)
     return totalWeather;
 }
