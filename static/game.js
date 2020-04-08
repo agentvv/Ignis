@@ -31,7 +31,7 @@ function tick() {
         return;
 
     updateWeather();
-    fire.size += 10 - getWeatherEffects();
+    fire.size += getWeatherEffects();
 
     if (fire.colour !== "Default") {
         fire.colourTime--;
