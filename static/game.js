@@ -72,20 +72,24 @@ function updateDisplay() {
     fireDisplay.style.marginTop = fireTop + "px";
     fireDisplay.style.marginLeft = fireLeft + "px";
     //fireDisplay.style.opacity = bright;
-    //document.getElementById("smoke").style.opacity = smoke;
 
-    var pos = 20;
-    //var tmp = fireDisplay.innerHTML;
+    var smokeDisplay = document.getElementById("smoke");
+    smokeDisplay.style.width = (fireWidth * 3) + "px";
+    smokeDisplay.style.marginLeft = (fireLeft-70) + "px";
+    //smokeDisplay.style.opacity = smoke;
+
+    var pos = 56;
+    var tmp = fireDisplay.innerHTML;
     if (fire.colour === "Default") {
-        //fireDisplay.innerHTML = tmp.slice(0, pos) + "0" + tmp.slice(pos+1, tmp.length);
+        fireDisplay.innerHTML = tmp.slice(0, pos) + "0" + tmp.slice(pos+1, tmp.length);
     } else if (fire.colour === "Blue") {
-        //fireDisplay.innerHTML = tmp.slice(0, pos) + "1" + tmp.slice(pos+1, tmp.length);
+        fireDisplay.innerHTML = tmp.slice(0, pos) + "1" + tmp.slice(pos+1, tmp.length);
     } else if (fire.colour === "Green") {
-        //fireDisplay.innerHTML = tmp.slice(0, pos) + "2" + tmp.slice(pos+1, tmp.length);
+        fireDisplay.innerHTML = tmp.slice(0, pos) + "2" + tmp.slice(pos+1, tmp.length);
     } else if (fire.colour === "Red") {
-        //fireDisplay.innerHTML = tmp.slice(0, pos) + "3" + tmp.slice(pos+1, tmp.length);
+        fireDisplay.innerHTML = tmp.slice(0, pos) + "3" + tmp.slice(pos+1, tmp.length);
     } else if (fire.colour === "Yellow") {
-        //fireDisplay.innerHTML = tmp.slice(0, pos) + "4" + tmp.slice(pos+1, tmp.length);
+        fireDisplay.innerHTML = tmp.slice(0, pos) + "4" + tmp.slice(pos+1, tmp.length);
     }
 
     document.getElementById("sizeStat").innerHTML = "Size: " + fire.size;

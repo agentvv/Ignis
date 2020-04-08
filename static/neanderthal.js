@@ -6,9 +6,9 @@ function neanderthal() {
     if ((ticksSince * 10 * (speedFactor/10000)) > rnd) {
         var sizeChange = Math.floor(0.05 * fire.size);
         fire.size -= sizeChange;
-        var balanceChange = Math.floor(sizeChange/100 * (fire.heat/1000))
+        var balanceChange = Math.ceil(sizeChange/100 * (fire.heat/1000))
         if (fire.colour != "Default") {
-            balaanceChange *= 2;
+            balanceChange *= 2;
         }
         inventory.balance += balanceChange;
         ticksSince = 0;

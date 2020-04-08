@@ -81,8 +81,16 @@ html, body {
     padding-left: 30px;
     padding-right: 30px;
 }
+
 #fire {
     width: 70px;
-    margin-top: -20px;
+    margin-top: 0px;
     margin-left: 390px;
+}
+
+#smoke {
+    width: 400px;
+    height: 350px;
+    margin-top: -355px;
+    margin-left: 225px;
 }
