@@ -32,6 +32,8 @@ window.onload = updateWeather;
 
 
 function getWeatherEffects() {
+    //Average temp in April  = 5
+    //humidity 15 + 10 - 5
     totalWeather = (currentWeather.humidity/4) + currentWeather.wind - currentWeather.temp;
     if (currentWeather.type === 'Thunderstorm') {
         totalWeather + 100;
@@ -58,8 +60,8 @@ function getWeatherEffects() {
     }
 
     totalWeather = Math.round(totalWeather * (1 - (fire.protection/10000)));
-    totalWeather = totalWeather - 5;
-    console.log('Total weather: ' + totalWeather.toString());
+    console.log('Total weather before fire size: ' + totalWeather.toString());
     timeSinceLastBigWeather++;
+    totalWeather = Math.round((fire.size / 4000) * totalWeather)
     return totalWeather;
 }
