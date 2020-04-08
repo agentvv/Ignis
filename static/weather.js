@@ -46,12 +46,13 @@ function getWeatherEffects() {
         console.log('Big weather event');
     }
 
-    if (timeSinceLastBigWeather > 17) {
+    if (timeSinceLastBigWeather > 11) {
         totalWeather = Math.round((Math.random() * 100) / 2);
         console.log('Random weather event');
     }
 
     totalWeather = Math.round(totalWeather * (1 - (fire.protection/10000)))
     console.log('Total weather: ' + totalWeather.toString());
+    timeSinceLastBigWeather++;
     return totalWeather;
 }
