@@ -48,3 +48,11 @@ def all():
         gameList.append({"id": game.id, "name": game.name})
 
     return json.dumps(gameList)
+
+@game.route('/api/delete', methods=['POST'])
+def delete():
+    gameID = request.json
+    game = SavedGame.query.filter_by(id=gameID).first()
+    db.session.delete(game)
+    dn.session.commit()
+    return 'Game deleted'
