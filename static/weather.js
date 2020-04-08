@@ -52,7 +52,8 @@ function getWeatherEffects() {
         console.log('Random weather event');
     }
 
-    totalWeather = Math.round(totalWeather * (1 - (fire.protection/10000)))
+    totalWeather = Math.round(totalWeather * (1 - (fire.protection/10000)));
+    totalWeather = totalWeather - 5;
     console.log('Total weather: ' + totalWeather.toString());
     timeSinceLastBigWeather++;
     return totalWeather;
