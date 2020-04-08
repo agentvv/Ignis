@@ -13,6 +13,7 @@ var roof = new Structure("Roof", "static/images/roof.jpg", "structure", 1, 50);
 var allItems = [birch, pine, oak, copper, rubidium, sodium, cesium, wall, roof];
 
 function updateShop() {
+    document.getElementById('shopBalanceDisplay').innerHTML = "Sharp Rocks: " + inventory.balance.toString();
     items = [];
     for (var i = 0; i < 3; ) {
         var curr = Math.floor(Math.random() * 9);
@@ -76,6 +77,7 @@ function itemBuy(event) {
                 inventory.items.push(tmp);
                 inventory.balance -= allItems[i].cost;
                 updateInventory();
+                document.getElementById('shopBalanceDisplay').innerHTML = "Sharp Rocks: " + inventory.balance.toString();
                 alert("Item bought");
                 return;
             }

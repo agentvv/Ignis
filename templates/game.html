@@ -105,11 +105,57 @@
             </div>
             
             <div id="inventoryScreen" style="display:none">
-                <button class="goToGame button">Back to fire</button>
-                <p>This your inventory</p>
-                <H1>Your things:</H1>
-                <ul id="inventoryItems">
-                </ul>
+                <div class="topBar">
+                    <button class="goToGame button is-small mainScreenButton">Back to Fire</button>
+                </div>
+                <div id="restOfInventory" style="width: 100%;">
+                    <div style="margin-left: 255px;"> <strong style="color: white;">Inventory</strong></div>
+                    <div id="balanceDisplay" style="margin-left: 40px;">Sharp Rocks: 0</div>
+                    <table id="inventoryItems">
+                        <tr>
+                            <td>
+                                <img src="../static/images/birch.jpg" alt=""><br>
+                                <button id="invBirch" class="button is-small invButton">Birch Remaining: 0</button>
+                            </td>
+                            <td>
+                                <img src="../static/images/pine.jpg" alt=""> <br>
+                                <button id="invPine" class="button is-small invButton">Pine Remaining: 0</button>
+                            </td>
+                            <td>
+                                <img src="../static/images/oak.jpg" alt=""> <br>
+                                <button id="invOak" class="button is-small invButton">Oak Remaining: 0</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="../static/images/cesium.jpg" alt=""> <br>
+                                <button id="invCesium" class="button is-small invButton">Cesium Remaining: 0</button>
+                            </td>
+                            <td>
+                                <img src="../static/images/sodium.jpg" alt=""> <br>
+                                <button id="invSodium" class="button is-small invButton">Sodium Remaining: 0</button>
+                            </td>
+                            <td>
+                                <img src="../static/images/rubidium.jpg" alt=""> <br>
+                                <button id="invRubidium" class="button is-small invButton">Rubidium Remaining: 0</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="../static/images/copper.jpg" alt=""> <br>
+                                <button id="invCopper" class="button is-small invButton">Copper Remaining: 0</button> 
+                            </td>
+                            <td>
+                                <img src="../static/images/wall.jpg" alt=""> <br>
+                                <button id="invWall" class="button is-small invButton">Wall Remaining: 0</button> 
+                            </td>
+                            <td>
+                                <img src="../static/images/roof.jpg" alt=""> <br>
+                                <button id="invRoof" class="button is-small invButton">Roof Remaining: 0</button> 
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             
             <div id="shopScreen" style="display:none;">
@@ -122,8 +168,8 @@
                             Welcome to the Shop!
                         </strong>
                         <div>Click an item to buy it.</div>
+                        <div id="shopBalanceDisplay">Sharp Rocks: 0</div>    
                     </div>
-                    
                     <table id="shopItems">
                     </table>
                 </div>

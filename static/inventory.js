@@ -3,6 +3,11 @@ var inventory = {
     items: [],
 };
 
+var buttons = document.getElementsByClassName("invButton");
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", itemUse);
+}
+
 class Item {
     constructor(name, image, subtype, cost) {
         this.name = name;
@@ -88,21 +93,15 @@ class Structure extends Item {
 }
 
 function updateInventory() {
-    var html = "";
-
-    for (var i = 0; i < inventory.items.length; i++) {
-        html += "<li><button class=\"invButton\" id=\"inv";
-        html += inventory.items[i].name + "\">" + inventory.items[i].name;
-        html += "</button><img style=\"width:100px;height:100px;\" src=\"";
-        html += inventory.items[i].image;
-        html += "\"/></li>";
+    document.getElementById('balanceDisplay').innerHTML = "Sharp Rocks: " + inventory.balance.toString();
+    var ids = ['Oak', 'Birch', 'Pine', 'Cesium', 'Copper', 'Sodium', 'Rubidium', 'Wall', 'Roof'];
+    for (var i = 0; i < ids.length; i++) {
+        //if (document.getElementById('inv'+ids[i]) != undefined) {
+        document.getElementById('inv'+ids[i]).innerHTML = ids[i] + ' Remaining: 0'; 
+        //} 
     }
-    
-    document.getElementById("inventoryItems").innerHTML = html;
-    
-    var buttons = document.getElementsByClassName("invButton");
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", itemUse);
+    for (var i = 0; i < inventory.items.length; i++) {
+        document.getElementById('inv'+inventory.items[i].name).innerHTML = inventory.items[i].name + ' Remaining: ' + inventory.items[i].num.toString();
     }
 }
 
