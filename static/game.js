@@ -31,9 +31,7 @@ function tick() {
         return;
 
     updateWeather();
-    weatherEffects = getWeatherEffects();
-    fire.size += 10 - weatherEffects[0];
-    fire.heat += 10 - weatherEffects[1];
+    fire.size += 10 - getWeatherEffects();
 
     if (fire.colour !== "Default") {
         fire.colourTime--;
@@ -50,6 +48,45 @@ function tick() {
 setInterval(tick, 10000);
 
 function updateDisplay() {
+    if (fire.size >= 10000) {
+        alert("You Win");
+        deleteGame();
+        loadPage(0);
+    } else if (fire.size <= 0) {
+        alert("You Lose");
+        deleteGame();
+        loadPage(0);
+    }
+
+    if (fire.heat < 1) {
+        fire.heat = 1;
+    } else if (fire.heat > 10000) {
+        alert("You have reached maximum heat");
+        fire.heat = 10000;
+    }
+
+    if (fire.brightness < 1) {
+        fire.brightness = 1;
+    } else if (fire.brightness > 10000) {
+        alert("You have reached maximum brightness");
+        fire.brightness = 10000;
+    }
+
+    if (fire.smokiness < 1) {
+        fire.smokiness = 1;
+    } else if (fire.smokiness > 10000) {
+        alert("You have reached maximum smokiness");
+        fire.smokiness = 10000;
+    }
+
+    if (fire.protection < 1) {
+        fire.protection = 1;
+    } else if (fire.protection > 10000) {
+        alert("You have reached maximum protection");
+        fire.protection = 10000;
+    }
+
+    
     var fireDisplay = document.getElementById("fire");
 
     var fireWidth = Math.round((fire.size/10000) * 200) + 50;
@@ -128,6 +165,21 @@ function updateDisplay() {
     }
     document.getElementById("windStat").innerHTML = "Wind Speed: " + str.slice(0, i);
     document.getElementById("weatherTypeStat").innerHTML = "Weather Type: " + currentWeather.type;
+}
+
+function deleteGame() {
+    $.ajax({
+        type: 'POST',
+        url: '/api/delete',
+        contentType: 'application/json',
+        data: JSON.stringify(gameID),
+        success: function(data) {
+            console.log("Game deleted");
+        }, 
+        error: function(error) {
+            console.error(error);
+        }
+    });
 }
 
 var backgnd = 'hill'
