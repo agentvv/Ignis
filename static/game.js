@@ -45,7 +45,7 @@ function tick() {
     updateDisplay();
     return;
 }
-setInterval(tick, 10000);
+setInterval(tick, 3000);
 
 function updateDisplay() {
     if (fire.size >= 10000) {
