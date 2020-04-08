@@ -60,6 +60,6 @@ function getWeatherEffects() {
     totalWeather = Math.round(totalWeather * (1 - (fire.protection/10000)));
     console.log('Total weather before fire size: ' + totalWeather.toString());
     timeSinceLastBigWeather++;
-    totalWeather = Math.round((fire.size / 4000) * totalWeather)
+    totalWeather = Math.ceil((fire.size / 4000) * totalWeather)
     return totalWeather;
 }

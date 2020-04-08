@@ -218,6 +218,9 @@ function toggleBackground(){
         $('#saveExit').click(function() {
             saveGame();
         });
+        $(".goToItemInfo").click(function() {
+            loadPage(6);
+        });
     } else {
         var backgroundnum = document.getElementById('mainScreenWrapper').innerHTML;
         var newHTML = backgroundnum.slice(0, 61+25) + '1' + backgroundnum.slice(61+26, backgroundnum.length);
@@ -237,6 +240,9 @@ function toggleBackground(){
         });
         $('#saveExit').click(function() {
             saveGame();
+        });
+        $(".goToItemInfo").click(function() {
+            loadPage(6);
         });
     }
 }
