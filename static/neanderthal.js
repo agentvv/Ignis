@@ -19,12 +19,12 @@ function neanderthal() {
 }
 
 function displayNeanderthal() {
-    //var neanderthalDisplay = document.getElementById("neanderthal");
-    //neanderthalDisplay.style.display = "block"
+    var neanderthalDisplay = document.getElementById("neanderthal");
+    neanderthalDisplay.style.display = "block"
     console.log("Displaying Neanderthal");
 
     setTimeout(function(){
         console.log("Finished Displaying Neanderthal");
-        //neanderthalDisplay.style.display = "none"
+        neanderthalDisplay.style.display = "none"
     }, 5000);
 }
