@@ -114,7 +114,17 @@ function loadSelectedGame(option) {
             gameID = parseInt(option);
             fire = data['fire'];
             name = data['name'];
-            inventory = data['inventory'];
+            inventory.balance = data['inventory'].balance;
+            var items = data["inventory"].items;
+            for (var i = 0; i < items.length; i++) {
+                var tmp = {};
+                if (items[i].subtype === "wood") tmp = new Wood();
+                else if (items[i].subtype === "metal") tmp = new Metal();
+                else if (items[i].subtype === "structure") tmp = new Structure();
+                
+                Object.assign(tmp, items[i]);
+                inventory.items.push(tmp);
+            }
             loadPage(1);
         }, 
         error: function (error) {
