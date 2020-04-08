@@ -171,8 +171,21 @@ function deleteGame() {
         url: '/api/delete',
         contentType: 'application/json',
         data: JSON.stringify(gameID),
-        success: function(data) {
+        success: function() {
             console.log("Game deleted");
+            fire = {
+                size: 1000,
+                heat: 1000,
+                brightness: 1000,
+                smokiness: 1000,
+                protection: 0,
+                colour: "Default",
+            };
+            inventory = {
+                balance: 5,
+                items: []
+            };
+            name = "";
         }, 
         error: function(error) {
             console.error(error);
