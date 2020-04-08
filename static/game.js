@@ -75,7 +75,7 @@ function updateDisplay() {
 
     var smokeDisplay = document.getElementById("smoke");
     smokeDisplay.style.width = (fireWidth * 3) + "px";
-    smokeDisplay.style.marginLeft = (fireLeft-70) + "px";
+    smokeDisplay.style.marginLeft = (fireLeft-(fireWidth * 2)/2) + "px";
     //smokeDisplay.style.opacity = smoke;
 
     var pos = 56;

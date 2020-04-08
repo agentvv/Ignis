@@ -99,7 +99,6 @@ $('#loadGame').click(function () {
     if (options[options.selectedIndex] != undefined) {
         selectedOption = options[options.selectedIndex].value;
         loadSelectedGame(selectedOption);
-        loadPage(1);
     }
 });
 
@@ -116,6 +115,7 @@ function loadSelectedGame(option) {
             fire = data['fire'];
             name = data['name'];
             inventory = data['inventory'];
+            loadPage(1);
         }, 
         error: function (error) {
             console.error(error);
