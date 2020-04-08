@@ -5,7 +5,7 @@ var fire = {
     heat: 1000,
     brightness: 1000,
     smokiness: 1000,
-    protection: 1000,
+    protection: 0,
     colour: "Default",
     colourTime: 0,
 };
@@ -16,7 +16,7 @@ function setGameDefaults() {
         heat: 1000,
         brightness: 1000,
         smokiness: 1000,
-        protection: 1000,
+        protection: 0,
         colour: "Default",
         colourTime: 0,
     };

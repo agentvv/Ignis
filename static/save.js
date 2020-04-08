@@ -79,11 +79,11 @@ function saveGame() {
                 heat: 1000,
                 brightness: 1000,
                 smokiness: 1000,
-                protection: 1000,
+                protection: 0,
                 colour: "Default",
             };
             inventory = {
-                balance: 10,
+                balance: 5,
                 items: []
             };
             name = "";

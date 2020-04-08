@@ -71,7 +71,7 @@ function newGame() {
     var heat = 1000;
     var brightness = 1000;
     var smokiness = 1000;
-    var protection = 1000;
+    var protection = 0;
     var remainingStats = 2000;
     var p = 100;
     var remainingStatsDisplay = document.getElementById('statsRemaining');
@@ -144,7 +144,7 @@ function newGame() {
     }
     document.getElementById('protectDec').addEventListener('click', decProtect);
     function decProtect() {
-        if (fire.protection > 1000) {
+        if (fire.protection > 0) {
             remainingStats += p;
             protection -= p;
             updateRemainingDisplay();
