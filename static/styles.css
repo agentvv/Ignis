@@ -98,3 +98,9 @@ html, body {
     margin-top: -355px;
     margin-left: 225px;
 }
+
+#itemInfo {
+    width: 100%;
+    height: 300px;
+    overflow-x: auto;
+}

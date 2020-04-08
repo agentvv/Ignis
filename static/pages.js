@@ -22,6 +22,10 @@ $(".goToInventory").click(function() {
     loadPage(5);
 });
 
+$(".goToItemInfo").click(function() {
+    loadPage(6);
+});
+
 function loadPage(page) {
     if (page == 0) {
         document.getElementById("mainMenu").style.display = "flex";
@@ -56,6 +60,11 @@ function loadPage(page) {
         updateInventory();
     } else {
         document.getElementById("inventoryScreen").style.display = "none";
+    }
+    if (page == 6) {
+        document.getElementById("itemInfoScreen").style.display = "block";
+    } else {
+        document.getElementById("itemInfoScreen").style.display = "none";
     }
 }
 
