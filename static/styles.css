@@ -49,6 +49,8 @@ html, body {
 
 .mainScreenButton {
     margin: 10px 5px 10px 5px;
+    position: relative;
+    z-index: 1000;
 }
 
 .topBar {
@@ -86,6 +88,8 @@ html, body {
     width: 70px;
     margin-top: 0px;
     margin-left: 390px;
+    position: relative;
+    z-index: 1000;
 }
 
 #smoke {
