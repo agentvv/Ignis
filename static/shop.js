@@ -65,7 +65,6 @@ function itemBuy(event) {
                         inventory.balance -= allItems[i].cost;
                         updateInventory();
                         document.getElementById('shopBalanceDisplay').innerHTML = "Sharp Rocks: " + inventory.balance.toString();
-                        alert("Item bought");
                         return;
                     }
                 }
@@ -79,7 +78,6 @@ function itemBuy(event) {
                 inventory.balance -= allItems[i].cost;
                 updateInventory();
                 document.getElementById('shopBalanceDisplay').innerHTML = "Sharp Rocks: " + inventory.balance.toString();
-                alert("Item bought");
                 return;
             }
         }
