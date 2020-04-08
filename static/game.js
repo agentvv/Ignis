@@ -79,9 +79,7 @@ function updateDisplay() {
         fire.smokiness = 10000;
     }
 
-    if (fire.protection < 1) {
-        fire.protection = 1;
-    } else if (fire.protection > 10000) {
+    if (fire.protection > 10000) {
         alert("You have reached maximum protection");
         fire.protection = 10000;
     }
