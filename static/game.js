@@ -137,7 +137,7 @@ function updateDisplay() {
             break;
         } 
     }
-    document.getElementById("tempStat").innerHTML = "Temperature: " + str.slice(0, i);
+    document.getElementById("tempStat").innerHTML = "Temperature: " + str.slice(0, i) + " °C";
 
     str = currentWeather.humidity.toFixed(2);
     i = str.length-1;
@@ -149,7 +149,7 @@ function updateDisplay() {
             break;
         } 
     }
-    document.getElementById("humidityStat").innerHTML = "Humidity: " + str.slice(0, i);
+    document.getElementById("humidityStat").innerHTML = "Humidity: " + str.slice(0, i) + "%";
     
     str = currentWeather.wind.toFixed(2);
     i = str.length-1;
@@ -161,7 +161,7 @@ function updateDisplay() {
             break;
         } 
     }
-    document.getElementById("windStat").innerHTML = "Wind Speed: " + str.slice(0, i);
+    document.getElementById("windStat").innerHTML = "Wind Speed: " + str.slice(0, i) + " km/h";
     document.getElementById("weatherTypeStat").innerHTML = "Weather Type: " + currentWeather.type;
 }
 

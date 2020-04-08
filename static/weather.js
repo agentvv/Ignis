@@ -17,7 +17,7 @@ function updateWeather() {
             currentWeather.temp = data.main.temp - 273.15;
             currentWeather.humidity = data.main.humidity;
             currentWeather.type = data.weather[0].main;
-            currentWeather.wind = data.wind.speed;
+            currentWeather.wind = data.wind.speed * 3.6;
         },
         error: function (error) {
             console.error(error);
@@ -32,7 +32,7 @@ window.onload = updateWeather;
 function getWeatherEffects() {
     //Average temp in April  = 5
     //humidity 15 + 10 - 5
-    totalWeather = (currentWeather.humidity/4) + currentWeather.wind - currentWeather.temp;
+    totalWeather = (currentWeather.humidity/4) + (currentWeather.wind/3.6) - currentWeather.temp;
     if (currentWeather.type === 'Thunderstorm') {
         totalWeather + 100;
     } else if (currentWeather.type === 'Drizzle') {
