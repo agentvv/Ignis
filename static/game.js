@@ -68,6 +68,9 @@ function updateDisplay() {
     smokeDisplay.style.marginLeft = (fireLeft-(fireWidth * 2)/2) + "px";
     smokeDisplay.style.opacity = smoke;
 
+    var neanderthalDisplay = document.getElementById("neanderthal");
+    neanderthalDisplay.style.marginLeft = (300 - (fireWidth-75)/2) + "px";
+
     var pos = 56;
     var tmp = fireDisplay.innerHTML;
     if (fire.colour === "Default") {
