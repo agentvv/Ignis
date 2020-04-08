@@ -10,8 +10,6 @@ var weatherLocation = 'Hamilton,CA';
 
 function updateWeather() {
     var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + weatherLocation + '&appid=671b93de8978f03f3102c346cf9e2d6a';
-    console.log(weatherURL);
-    //var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=Hamilton,CA&appid=671b93de8978f03f3102c346cf9e2d6a';
     $.ajax({
         type: 'GET',
         url: weatherURL,
