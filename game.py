@@ -32,12 +32,14 @@ def save():
     gameToChange = SavedGame.query.filter_by(id=gameID).first()
     gameToChange.gameState = json.dumps(gameState)
     db.session.commit()
+    db.session.remove()
     return 'Game saved.'
 
 @game.route('/api/load', methods=['POST'])
 def load():
     data = request.json
     game = SavedGame.query.filter_by(id=data).first()
+    db.session.remove()
     return game.gameState
 
 @game.route('/api/all', methods=['GET'])
@@ -46,7 +48,7 @@ def all():
     gameList = []
     for game in games:
         gameList.append({"id": game.id, "name": game.name})
-
+    db.session.remove()
     return json.dumps(gameList)
 
 @game.route('/api/delete', methods=['POST'])
@@ -55,4 +57,5 @@ def delete():
     game = SavedGame.query.filter_by(id=gameID).first()
     db.session.delete(game)
     db.session.commit()
+    db.session.remove()
     return 'Game deleted'
