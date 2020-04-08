@@ -83,7 +83,7 @@ function saveGame() {
                 colour: "Default",
             };
             inventory = {
-                balance: 5,
+                balance: 10,
                 items: []
             };
             name = "";
