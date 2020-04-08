@@ -26,6 +26,10 @@ $(".goToItemInfo").click(function() {
     loadPage(6);
 });
 
+$('#aboutPageButton').click(function () {
+    loadPage(7);
+});
+
 function loadPage(page) {
     if (page == 0) {
         document.getElementById("mainMenu").style.display = "flex";
@@ -65,6 +69,11 @@ function loadPage(page) {
         document.getElementById("itemInfoScreen").style.display = "block";
     } else {
         document.getElementById("itemInfoScreen").style.display = "none";
+    }
+    if (page == 7) {
+        document.getElementById("aboutPage").style.display = "block";
+    } else {
+        document.getElementById("aboutPage").style.display = "none";
     }
 }
 
