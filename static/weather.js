@@ -47,7 +47,8 @@ function getWeatherEffects() {
     }
 
     if (timeSinceLastBigWeather > 11) {
-        totalWeather = Math.round((Math.random() * 100) / 2);
+        timeSinceLastBigWeather = 0;
+        totalWeather = Math.round(((Math.random() * 100) / 2 + 20));
         console.log('Random weather event');
     }
 
