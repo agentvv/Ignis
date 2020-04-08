@@ -38,7 +38,7 @@ def save():
 def load():
     data = request.json
     game = SavedGame.query.filter_by(id=data).first()
-    return json.loads(game.gameState)
+    return game.gameState
 
 @game.route('/api/all', methods=['GET'])
 def all():

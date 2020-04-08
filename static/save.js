@@ -111,6 +111,7 @@ function loadSelectedGame(option) {
         data: JSON.stringify(option), 
         success: function (data) {
             console.log(data);
+            data = JSON.parse(data);
             gameID = parseInt(option);
             fire = data['fire'];
             name = data['name'];
