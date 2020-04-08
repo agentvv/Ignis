@@ -4,6 +4,7 @@ var currentWeather = {
     type: "Sunny",
     wind: 5,
 };
+var timeSinceLastBigWeather = 0;
 
 function updateWeather() {
     $.ajax({
@@ -23,6 +24,34 @@ function updateWeather() {
 }
 window.onload = updateWeather;
 
+
+
 function getWeatherEffects() {
-    return [0, 0];
+    totalWeather = (currentWeather.humidity/4) + currentWeather.wind - currentWeather.temp;
+    if (currentWeather.type === 'Thunderstorm') {
+        totalWeather + 100;
+    } else if (currentWeather.type === 'Drizzle') {
+        totalWeather + 10; 
+    } else if (currentWeather.type === 'Rain') {
+        totalWeather + 30;
+    } else if (currentWeather.type === 'Snow') {
+        totalWeather + 20;
+    } else if (currentWeather.type === 'Clear') {
+        totalWeather - 10;
+    }
+
+    totalWeather = Math.round(totalWeather);
+    if (totalWeather > 30) {
+        timeSinceLastBigWeather = 0;
+        console.log('Big weather event');
+    }
+
+    if (timeSinceLastBigWeather > 17) {
+        totalWeather = Math.round((Math.random() * 100) / 2);
+        console.log('Random weather event');
+    }
+
+    totalWeather = Math.round(totalWeather * (1 - (fire.protection/10000)))
+    console.log('Total weather: ' + totalWeather.toString());
+    return totalWeather;
 }
