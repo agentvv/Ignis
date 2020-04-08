@@ -54,5 +54,5 @@ def delete():
     gameID = request.json
     game = SavedGame.query.filter_by(id=gameID).first()
     db.session.delete(game)
-    dn.session.commit()
+    db.session.commit()
     return 'Game deleted'
